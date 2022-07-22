@@ -1,0 +1,33 @@
+
+<ng-container  *ngIf="tasksList | async as list">
+
+  <h2 (click)="collapse(container)">{{headerText}}</h2>
+  <ul #container
+    cdkDropList
+    [cdkDropListData]="list"
+    class="list"
+    [class.add-min-height]="list.length === 0"
+    (cdkDropListDropped)="drop($event)">
+
+    <ng-container *ngIf="(list | lmSearch: search).length; else emptyList">
+      <li *ngFor="let item of list | lmSearch: search" cdkDrag>
+        <div class="background-placeholder" *cdkDragPlaceholder></div>
+        <span>{{item}}</span>
+        <ng-template
+         [ngTemplateOutlet]="templateRef"
+         [ngTemplateOutletContext]="{$implicit: {item: item, list: list}}">
+        </ng-template>
+        <lm-icon icon="trash" (click)="remove(item, list)"></lm-icon>
+      </li>
+    </ng-container>
+
+    <ng-template #emptyList>
+      <li class="no-draggable">
+        <span>
+          --- {{ search ? 'No Search Match for "' + search + '"' : 'Empty List'}} ---
+        </span>
+      </li>
+    </ng-template>
+  </ul>
+
+</ng-container>

@@ -1,0 +1,43 @@
+
+@use 'src/styles/definitions' as *;
+
+:host {
+  display: flex;
+  justify-content: flex-end;
+}
+
+div {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 0 1px $white inset;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 3rem;
+  width: 40px;
+  height: 40px;
+  transition: all .3s ease;
+
+  &:hover {
+    box-shadow: 0 0 0 1px $green inset;
+  }
+
+  &.open {
+    width: 300px;
+  }
+}
+
+lm-icon {
+  padding: $padding 0;
+  min-width: 40px;
+}
+
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+  height: 100%;
+  font-weight: 600;
+  background: transparent;
+  color: $white;
+}
+

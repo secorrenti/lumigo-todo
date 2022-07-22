@@ -1,0 +1,40 @@
+
+
+
+
+
+@use 'src/styles/definitions' as *;
+
+
+:host {
+  padding: 80px 20px;
+  width: 100%;
+  max-width: 1300px;
+}
+
+
+.group {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.clear-all {
+  text-align: center;
+  button {
+    margin: 50px;
+    width: 200px;
+    height: 60px;
+    border-radius: 50px;
+    background: $red;
+    border: none;
+    color: $white;
+    font-weight: 800;
+    opacity: .5;
+    transition: all .3s ease;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

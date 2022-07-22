@@ -1,0 +1,4 @@
+<input [(ngModel)]="task" (keyup)="keyup($event)" placeholder="Add New Todo..."/>
+<div>
+  <button [class.show]="task.length" (click)="buttonClick()"> ADD</button>
+</div>

@@ -1,0 +1,45 @@
+
+<lm-toast></lm-toast>
+
+<lm-progress></lm-progress>
+
+<lm-add-todo  (addTask)="addTask($event)"></lm-add-todo>
+
+<lm-search></lm-search>
+
+<div class="group" cdkDropListGroup>
+
+
+  <lm-list-todo
+    headerText="To Do"
+    [tasksList]="todoList$"
+  >
+    <ng-template let-details>
+      <lm-icon icon="pen" (click)="edit(details.item, details.list)"></lm-icon>
+      <lm-icon icon="check2-circle" (click)="done(details.item, details.list)"></lm-icon>
+    </ng-template>
+  </lm-list-todo>
+
+
+  <lm-list-todo
+    headerText="Do Later"
+    [tasksList]="doLaterList$"
+  >
+    <ng-template let-details>
+      <lm-icon icon="pen" (click)="edit(details.item, details.list)"></lm-icon>
+      <lm-icon icon="check2-circle" (click)="done(details.item, details.list)"></lm-icon>
+    </ng-template>
+  </lm-list-todo>
+
+
+  <lm-list-todo
+    headerText="Completed"
+    [tasksList]="completedList$"
+  >
+  </lm-list-todo>
+
+  <div class="clear-all" >
+    <button (click)="clearAllTasks()">CLEAR ALL</button>
+  </div>
+
+</div>

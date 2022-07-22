@@ -1,0 +1,19 @@
+
+
+<div class="dialog-cover" @dialogCoverAnim>
+
+  <div class="dialog">
+
+    <label>Replace {{currentTask}} task To:</label>
+
+    <input type="text" [value]="currentTask" #inputRef>
+
+    <div class="btns">
+      <button (click)="cancel()"> CANCEL </button>
+      <button class="update" (click)="update(inputRef.value)"> UPDATE </button>
+    </div>
+
+  </div>
+
+</div>
+

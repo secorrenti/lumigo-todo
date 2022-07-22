@@ -1,0 +1,52 @@
+
+
+@use 'src/styles/definitions' as *;
+
+
+:host {
+  background-color: rgba($white, .5);
+  border-radius: $radius;
+  width: 100%;
+  display: flex;
+  input {
+    flex: 1;
+    font-weight: 900;
+    color: $violet-darker;
+    border: none;
+    padding: 0 $padding * 2;
+    height: $box-size;
+    font-size: $font-size-normal;
+    background-color: transparent;
+    outline: none;
+  }
+  button {
+    border: none;
+    padding: 0 24px;
+    border: none;
+    padding: 0 24px;
+    height: calc(100% - 12px);
+    margin: 6px;
+    border-radius: 4px;
+    background: $green-dark;
+    transition: ease .3s all;
+    cursor: pointer;
+    font-weight: 900;
+    text-shadow: -1px -1px 0 rgba($green, .7);
+    transform: scale(0);
+
+    &.show {
+      transform: scale(1);
+    }
+
+    &:hover {
+      background: $green;
+      box-shadow: 0 4px 4px 4px $green-dark;
+      transform: translateY(-4px);
+    }
+    &:active {
+      background: $green-dark;
+      box-shadow: 0 0 0 0 $green-dark;
+      transform: translateY(2px);
+    }
+  }
+}

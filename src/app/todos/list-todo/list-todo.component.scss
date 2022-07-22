@@ -1,0 +1,88 @@
+
+
+
+
+
+
+@use 'src/styles/definitions' as *;
+
+:host {
+  display: block;
+  color: $white;
+  margin: auto;
+  width: 100%;
+  margin: 3rem 0 1rem;
+  box-shadow: 0 16px 10px -6px rgba($violet, 33%);
+}
+
+h2 {
+  padding: 1rem;
+  margin: 0;
+  font-size: $font-size-bigger;
+  color: $white-dirty;
+  text-shadow: -1px -1px 1px $white, 1px 1px 1px $violet-darker;
+  background-color: $cyan-dark;
+  border-radius: $radius $radius 0 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+ul {
+  border: solid 1px $violet-darker;
+  background: $violet;
+  border-radius: 0 0 $radius $radius;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+  &.add-min-height {
+    min-height: $box-size;
+  }
+}
+
+span {
+  padding: $padding;
+  flex: 1;
+}
+
+li {
+  list-style: none;
+  padding: $padding;
+  border-bottom: solid 1px $violet-darker;
+  display: flex;
+  align-items: center;
+  font-size: $font-size-big;
+  &:not(.no-draggable) {
+    cursor: move;
+  }
+}
+
+
+.cdk-drag-preview {
+  border-radius: 4px;
+  background-color: rgba($violet-light, 0.9);
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-animating {
+  transition: transform 4ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.box:last-child {
+  border: none;
+}
+
+.list.cdk-drop-list-dragging .box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.background-placeholder {
+  background-color: $cyan;
+  border: dotted 3px $blue;
+  height: calc(#{$box-size} - 8px);
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

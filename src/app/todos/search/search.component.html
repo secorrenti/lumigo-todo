@@ -1,0 +1,9 @@
+
+<div [class.open]="open">
+  <lm-icon
+    icon="search"
+    color="white"
+    (click)="toggle()"
+  ></lm-icon>
+  <input type="text" (input)="change(inputRef.value)" #inputRef>
+</div>
