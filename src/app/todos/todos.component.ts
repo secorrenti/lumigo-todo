@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {CdkDragDrop, moveItemInArray, transferArrayItem, CdkDrag} from '@angular/cdk/drag-drop';
 import { TodosService } from './todos.service';
 import { SearchService } from './search/search.service';
 import { ToastService } from './toast/toast.service';
